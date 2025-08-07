@@ -15,14 +15,14 @@ class Customer(models.Model):
 class Product(models.Model):
 #	seller= models.ForeignKey(User, default=1, on_delete=models.CASCADE)
 	name = models.CharField(max_length=500, null=True) 
-	description = models.TextField
+	description = models.TextField(null=True)
 	price = models.DecimalField(max_digits=11, decimal_places=2, null=True)
 	color = models.CharField(max_length=100, null=True, blank=True)
 	size = models.CharField(max_length=100, null=True, blank=True)
 	main_image = models.CharField(max_length=500, null=True, blank=True)
-	category_tree = models.TextField
-	image_count = models.DecimalField(max_digits=11, decimal_places=2, null=True)
-	image_urls = models.TextField
+	category_tree = models.TextField(null=True)
+	image_count = models.IntegerField(null=True)
+	image_urls = models.TextField(null=True)
 	other_attributes = models.CharField(max_length=500, null=True)
 	root_category = models.CharField(max_length=500, null=True)
 	category = models.CharField(max_length=500, null=True)
