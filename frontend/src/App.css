@@ -60,6 +60,7 @@ a:hover {
 
 .brandLogo {
 	height: 30px;
+	color: var(--pluggRed);
 }
 
 .navRight {
