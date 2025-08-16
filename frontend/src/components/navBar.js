@@ -1,5 +1,15 @@
 import pluggLogo from '../images/Plugg Logo.png'
-import pForPlugg from '../images/P for Plugg.png'
+import threeBars from '../images/icons/bar-1.svg'
+import icon01 from '../images/icons/01.svg'
+import icon02 from '../images/icons/02.svg'
+import icon03 from '../images/icons/03.svg'
+import icon04 from '../images/icons/04.svg'
+import icon05 from '../images/icons/05.svg'
+import icon06 from '../images/icons/06.svg'
+import icon07 from '../images/icons/07.svg'
+import icon08 from '../images/icons/08.svg'
+import icon09 from '../images/icons/09.svg'
+import icon10 from '../images/icons/10.svg'
 import { Link } from 'react-router-dom'
 import axios from "axios"
 import { useQuery } from 'react-query'
@@ -95,24 +105,22 @@ function NavBar(props) {
                         <div className="col-lg-12">
                             <div className="logo-search-category-wrapper">
                                 <div className="category-search-wrapper">
-                                    <Link to='/' className="navLeft d-flex flex-row">
-                                        <img className="brandLogo" src={pluggLogo} style={{ marginTop: '8px'}} />
+                                    <Link to='/' className="navLeft d-flex flex-row topNav">
+
+                                        <img className="brandLogo" src={pluggLogo} style={{ marginTop: '8px', marginRight: '8px'}} />
+                                        <h3>PLUG</h3>  
 
                                     </Link>
-                                    <h4 style={{ 'color': 'var(--pluggRed)'}}>PLUG</h4>                                 
-
+                               
                                     <form action="#" className="search-header">
                                         <input type="text" placeholder="Search for products, categories or brands" required />
                                         <Link href="#" className="rts-btn btn-primary radious-sm with-icon">
                                             <div className="btn-text">
                                                 Search
                                             </div>
-                                            <div className="arrow-icon">
-                                                <i className="fa-light fa-magnifying-glass"></i>
-                                            </div>
-                                            <div className="arrow-icon">
-                                                <i className="fa-light fa-magnifying-glass"></i>
-                                            </div>
+                                            <i className="fa fa-magnifying-glass"></i>
+
+
                                         </Link>
                                     </form>
                                 </div>
@@ -136,16 +144,16 @@ function NavBar(props) {
                                 </div>
                                 <div className="accont-wishlist-cart-area-header">
                                     <Link href="account.html" className="btn-border-only account">
-                                        <i className="fa-light fa-user"></i>
+                                        <i className="fa fa-user"></i>
                                         <span>Account</span>
                                     </Link>
                                     <Link href="wishlist.html" className="btn-border-only wishlist">
-                                        <i className="fa-regular fa-heart"></i>
+                                        <i className="fa fa-heart"></i>
                                         <span className="text">Wishlist</span>
                                         <span className="number">2</span>
                                     </Link>
                                     <div className="btn-border-only cart category-hover-header">
-                                        <i className="fa-sharp fa-regular fa-cart-shopping"></i>
+                                        <i className="fa fa-cart-shopping"></i>
                                         <span  className="text">My Cart</span>
                                         <span className="number">2</span>
                                         <div className="category-sub-menu card-number-show">
@@ -160,13 +168,13 @@ function NavBar(props) {
                                                             <h5 className="title">Foster Farms Breast Nuggets Shaped Chicken</h5>
                                                         </Link>
                                                         <div className="number">
-                                                            1 <i className="fa-regular fa-x"></i>
+                                                            1 <i className="fa fa-x"></i>
                                                             <span>$36.00</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="close-c1">
-                                                    <i className="fa-regular fa-x"></i>
+                                                    <i className="fa fa-x"></i>
                                                 </div>
                                             </div>
                                             <div className="cart-item-1">
@@ -179,13 +187,13 @@ function NavBar(props) {
                                                             <h5 className="title">Foster Farms Breast Nuggets Shaped Chicken</h5>
                                                         </Link>
                                                         <div className="number">
-                                                            1 <i className="fa-regular fa-x"></i>
+                                                            1 <i className="fa fa-x"></i>
                                                             <span>$36.00</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="close-c1">
-                                                    <i className="fa-regular fa-x"></i>
+                                                    <i className="fa fa-x"></i>
                                                 </div>
                                             </div>
                                             <div className="cart-item-1">
@@ -198,13 +206,13 @@ function NavBar(props) {
                                                             <h5 className="title">Foster Farms Breast Nuggets Shaped Chicken</h5>
                                                         </Link>
                                                         <div className="number">
-                                                            1 <i className="fa-regular fa-x"></i>
+                                                            1 <i className="fa fa-x"></i>
                                                             <span>$36.00</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="close-c1">
-                                                    <i className="fa-regular fa-x"></i>
+                                                    <i className="fa fa-x"></i>
                                                 </div>
                                             </div>
                                             <div className="sub-total-cart-balance">
@@ -246,14 +254,14 @@ function NavBar(props) {
                                             <li className="logo-search-category-wrapper">
                                                 <div className="category-search-wrapper">
                                                     <div className="category-btn category-hover-header">
-                                                        <img className="parent" src="../images/icons/bar-1.svg" alt="icons"/>
+                                                        <img className="parent" src={threeBars} alt="icons"/>
                                                         <span>Categories</span>
                                                         <ul className="category-sub-menu" id="category-active-four">
                                                             <li>
                                                                 <Link href="#" className="menu-item">
-                                                                    <img src="../images/icons/01.svg" alt="icons"/>
+                                                                    <img src={ icon01 } alt="icons"/>
                                                                     <span>Breakfast &amp; Dairy</span>
-                                                                    <i className="fa-regular fa-plus"></i>
+                                                                    <i className="fa fa-plus"></i>
                                                                 </Link>
                                                                 <ul className="submenu mm-collapse">
                                                                     <li><Link className="mobile-menu-link" href="#">Breakfast</Link></li>
@@ -263,9 +271,9 @@ function NavBar(props) {
                                                             </li>
                                                             <li>
                                                                 <Link href="#" className="menu-item">
-                                                                    <img src="../images/icons/02.svg" alt="icons"/>
+                                                                    <img src={ icon02 } alt="icons"/>
                                                                     <span>Meats &amp; Seafood</span>
-                                                                    <i className="fa-regular fa-plus"></i>
+                                                                    <i className="fa fa-plus"></i>
                                                                 </Link>
                                                                 <ul className="submenu mm-collapse">
                                                                     <li><Link className="mobile-menu-link" href="#">Breakfast</Link></li>
@@ -275,15 +283,15 @@ function NavBar(props) {
                                                             </li>
                                                             <li>
                                                                 <Link href="#" className="menu-item">
-                                                                    <img src="../images/icons/03.svg" alt="icons"/>
+                                                                    <img src={ icon03 } alt="icons"/>
                                                                     <span>Breads &amp; Bakery</span>
                                                                 </Link>
                                                             </li>
                                                             <li>
                                                                 <Link href="#" className="menu-item">
-                                                                    <img src="../images/icons/04.svg" alt="icons"/>
+                                                                    <img src={ icon04 } alt="icons"/>
                                                                     <span>Chips &amp; Snacks</span>
-                                                                    <i className="fa-regular fa-plus"></i>
+                                                                    <i className="fa fa-plus"></i>
                                                                 </Link>
                                                                 <ul className="submenu mm-collapse">
                                                                     <li><Link className="mobile-menu-link" href="#">Breakfast</Link></li>
@@ -293,21 +301,21 @@ function NavBar(props) {
                                                             </li>
                                                             <li>
                                                                 <Link href="#" className="menu-item">
-                                                                    <img src="../images/icons/05.svg" alt="icons"/>
+                                                                    <img src={ icon05 } alt="icons"/>
                                                                     <span>Medical Healthcare</span>
                                                                 </Link>
                                                             </li>
                                                             <li>
                                                                 <Link href="#" className="menu-item">
-                                                                    <img src="../images/icons/06.svg" alt="icons"/>
+                                                                    <img src={ icon06 } alt="icons"/>
                                                                     <span>Breads &amp; Bakery</span>
                                                                 </Link>
                                                             </li>
                                                             <li>
                                                                 <Link href="#" className="menu-item">
-                                                                    <img src="../images/icons/07.svg" alt="icons"/>
+                                                                    <img src={ icon07 } alt="icons"/>
                                                                     <span>Biscuits &amp; Snacks</span>
-                                                                    <i className="fa-regular fa-plus"></i>
+                                                                    <i className="fa fa-plus"></i>
                                                                 </Link>
                                                                 <ul className="submenu mm-collapse">
                                                                     <li><Link className="mobile-menu-link" href="#">Breakfast</Link></li>
@@ -317,19 +325,19 @@ function NavBar(props) {
                                                             </li>
                                                             <li>
                                                                 <Link href="#" className="menu-item">
-                                                                    <img src="../images/icons/08.svg" alt="icons"/>
+                                                                    <img src={ icon08 } alt="icons"/>
                                                                     <span>Frozen Foods</span>
                                                                 </Link>
                                                             </li>
                                                             <li>
                                                                 <Link href="#" className="menu-item">
-                                                                    <img src="../images/icons/09.svg" alt="icons"/>
+                                                                    <img src={ icon09 } alt="icons"/>
                                                                     <span>Grocery &amp; Staples</span>
                                                                 </Link>
                                                             </li>
                                                             <li>
                                                                 <Link href="#" className="menu-item">
-                                                                    <img src="../images/icons/10.svg" alt="icons"/>
+                                                                    <img src={ icon10 } alt="icons"/>
                                                                     <span>Other Items</span>
                                                                 </Link>
                                                             </li>
@@ -456,14 +464,14 @@ function NavBar(props) {
                                                 <Link href="#" className="menu-item">
                                                     <img src="assets/images/icons/01.svg" alt="icons"/>
                                                     <span>Breakfast & Dairy</span>
-                                                    <i className="fa-regular fa-plus"></i>
+                                                    <i className="fa fa-plus"></i>
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href="#" className="menu-item">
                                                     <img src="assets/images/icons/02.svg" alt="icons"/>
                                                     <span>Meats & Seafood</span>
-                                                    <i className="fa-regular fa-plus"></i>
+                                                    <i className="fa fa-plus"></i>
                                                 </Link>
                                             </li>
                                             <li>
@@ -476,7 +484,7 @@ function NavBar(props) {
                                                 <Link href="#" className="menu-item">
                                                     <img src="assets/images/icons/04.svg" alt="icons"/>
                                                     <span>Chips & Snacks</span>
-                                                    <i className="fa-regular fa-plus"></i>
+                                                    <i className="fa fa-plus"></i>
                                                 </Link>
                                             </li>
                                             <li>
@@ -495,7 +503,7 @@ function NavBar(props) {
                                                 <Link href="#" className="menu-item">
                                                     <img src="assets/images/icons/07.svg" alt="icons"/>
                                                     <span>Biscuits & Snacks</span>
-                                                    <i className="fa-regular fa-plus"></i>
+                                                    <i className="fa fa-plus"></i>
                                                 </Link>
                                             </li>
                                             <li>
@@ -540,11 +548,11 @@ function NavBar(props) {
                                             Account
                                         </Link>
                                         <Link href="wishlist.html" className="btn-border-only wishlist">
-                                            <i className="fa-regular fa-heart"></i>
+                                            <i className="fa fa-heart"></i>
                                             Wishlist
                                         </Link>
                                         <div className="btn-border-only cart category-hover-header">
-                                            <i className="fa-sharp fa-regular fa-cart-shopping"></i>
+                                            <i className="fa-sharp fa fa-cart-shopping"></i>
                                             <span className="text">My Cart</span>
                                             <div className="category-sub-menu card-number-show">
                                                 <h5 className="shopping-cart-number">Shopping Cart (03)</h5>
@@ -558,13 +566,13 @@ function NavBar(props) {
                                                                 <h5 className="title">Foster Farms Breast Nuggets Shaped Chicken</h5>
                                                             </Link>
                                                             <div className="number">
-                                                                1 <i className="fa-regular fa-x"></i>
+                                                                1 <i className="fa fa-x"></i>
                                                                 <span>$36.00</span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div className="close-c1">
-                                                        <i className="fa-regular fa-x"></i>
+                                                        <i className="fa fa-x"></i>
                                                     </div>
                                                 </div>
                                                 <div className="cart-item-1">
@@ -577,13 +585,13 @@ function NavBar(props) {
                                                                 <h5 className="title">Foster Farms Breast Nuggets Shaped Chicken</h5>
                                                             </Link>
                                                             <div className="number">
-                                                                1 <i className="fa-regular fa-x"></i>
+                                                                1 <i className="fa fa-x"></i>
                                                                 <span>$36.00</span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div className="close-c1">
-                                                        <i className="fa-regular fa-x"></i>
+                                                        <i className="fa fa-x"></i>
                                                     </div>
                                                 </div>
                                                 <div className="cart-item-1">
@@ -596,13 +604,13 @@ function NavBar(props) {
                                                                 <h5 className="title">Foster Farms Breast Nuggets Shaped Chicken</h5>
                                                             </Link>
                                                             <div className="number">
-                                                                1 <i className="fa-regular fa-x"></i>
+                                                                1 <i className="fa fa-x"></i>
                                                                 <span>$36.00</span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div className="close-c1">
-                                                        <i className="fa-regular fa-x"></i>
+                                                        <i className="fa fa-x"></i>
                                                     </div>
                                                 </div>
                                                 <div className="sub-total-cart-balance">

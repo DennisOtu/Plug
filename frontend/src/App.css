@@ -24,7 +24,7 @@ body{
 	background-color: hsl(0, 0%, 98%);
 	color: var(--pluggGrey);
 }
- 
+
 a {
 	color: inherit;
 }
@@ -49,6 +49,21 @@ a:hover {
 	color: white;
 }
 
+.topNav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 10vw;
+	height: 6rem;
+	border-radius: 8px;
+}
+
+.topNav:hover{
+	background: rgb(235, 235, 235);
+
+}
+
 .navLeft {
 	margin-left: 2rem;
 	text-decoration: none;
@@ -60,7 +75,7 @@ a:hover {
 
 .brandLogo {
 	height: 30px;
-	color: var(--pluggRed);
+    filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg) brightness(94%) contrast(117%);
 }
 
 .navRight {
@@ -85,72 +100,53 @@ a:hover {
 }
 
 .heroDiv{
-	width: 100%;
-	background: var(--pluggRed);
+	height: 80vh;
+	width: 100vw;
+	background: var(--pluggGrey);
 	color: white;
 	overflow: hidden;
-	border-radius: 0 0.25rem 0.25rem 0;
 }
 
 .heroCarousel {
 	position: relative;
-	height: 100%;
+	height: inherit;
 }
 
 .heroCarousel div {
 	position: absolute;
-	width: 100%;
-	height: 100%;
+	height: inherit;
+	width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
 }
 
-.categoriesDiv {
-	width: 20%;
-	background: rgba(0, 0, 0, 0.86);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	color: white;
-	font-family: var(--fontHead);
-	font-size: 12px;
-	border-radius: 0.25rem 0 0 0.25rem;
-}
-
-.categoriesDiv div {
-	width: 100%;
-	padding-block: 0.4rem;
-	padding-left: 2rem;
-	overflow: hidden;
-}
-
-.categoriesDiv div:hover {
-	cursor: pointer;
-	background-color: rgba(110, 110, 110, 0.315);
-	transform: translateY(1px);
-}
 
 .carouselPrev {
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
 	position: absolute;
 	z-index: 9990;
-	left: 20%;
-	top: 35%;
+	left: 2vw;
+	top:70vh;
 	cursor: pointer;
-	background: rgba(0, 0, 0, 0.86);
+	background: rgba(0, 0, 0, 0.804);
 	color: white;
 
 }
 
 .carouselNext {
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
 	position: absolute;
 	z-index: 9990;
-	left: 93%;
-	top: 35%;
+	left: 90vw;
+	top: 70vh;
 	cursor: pointer;
-	background: rgba(0, 0, 0, 0.86);
+	background: rgba(0, 0, 0, 0.804);
 	color: white;
 }
 

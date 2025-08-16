@@ -20,7 +20,7 @@ function ProductsList() {
             const total = data.data.count
             const currentPageCount = Math.ceil(total / 20)
             setPageCount(currentPageCount)
-            console.log('useEffect ran')
+            console.log('useEffect productList component')
         }
     })
     
@@ -45,7 +45,7 @@ function ProductsList() {
                     <div className="productCard">
                         <Link to={`product/${product.id}`}>
                             <div style={{ display: 'flex' , flexDirection: 'row' , justifyContent: 'center'}}>
-                                <img className="productImg" src={ product.image_url }/>
+                                <img className="productImg" src={ product.main_image }/>
                             </div>
                             <div style={{ marginTop: '8px'}}>
                                 <p style={{paddingInline: '1rem', fontFamily: 'var(--fontHead)', fontSize: '14px', textAlign: 'center', height: '40px', overflow: 'hidden'}}>{ product.name }</p>
