@@ -47,21 +47,79 @@ function ProductsList() {
                             <div style={{ display: 'flex' , flexDirection: 'row' , justifyContent: 'center'}}>
                                 <img className="productImg" src={ product.main_image }/>
                             </div>
+
                             <div style={{ marginTop: '8px'}}>
-                                <p style={{paddingInline: '1rem', fontFamily: 'var(--fontHead)', fontSize: '14px', textAlign: 'center', height: '40px', overflow: 'hidden'}}>{ product.name }</p>
-                                <p style={{fontWeight: 'bold', marginBlock: '0', textAlign: 'center'}}>${ product.price }</p>
+                                <p style={{
+                                    paddingInline: '5px', fontFamily: 'var(--fontHead)', 
+                                    fontSize: '14px', fontWeight: 'bold', textAlign: 'left', 
+                                    height: '40px', overflow: 'hidden'}}>{ product.name }
+                                </p>
+
+                                <p style={{fontWeight: 'bold', marginBlock: '0', textAlign: 'left', color: 'var(--pluggRed)'}}>${ product.price }</p>
 
                             </div>
-
                         </Link>
                         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '0.5rem'}}>
-                            <button className="btnPill" data-product="{{ product.id }}" data-action="add">add
+                            <button className="addBtn" data-product="{{ product.id }}" data-action="add">
         	                    <i className="fas fa-plus"></i><i class="fas fa-shopping-cart"></i>
                         	</button>
                         </div>
 
                     </div>
-                    
+
+                    /*<div className="col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
+                        <div className="single-shopping-card-one">
+                            <div className="image-and-action-area-wrapper">
+                                <a href="shop-details.html" className="thumbnail-preview">
+
+                                    <img src="assets/images/grocery/15.jpg" alt="grocery"/>
+                                </a>
+                                <div className="action-share-option">
+                                    <span className="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
+                                        <i className="fa-light fa-heart"></i>
+                                    </span>
+                                    <span className="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <i className="fa-solid fa-arrows-retweet"></i>
+                                    </span>
+                                    <span className="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
+                                        <i className="fa-regular fa-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="body-content">
+
+                                <a href="shop-details.html">
+                                    <h4 className="title">Nestle Cerelac Mixed Fruits &
+                                        Wheat with Milk</h4>
+                                </a>
+                                <span className="availability">500g Pack</span>
+                                <div className="price-area">
+                                    <span className="current">$36.00</span>
+                                    <div className="previous">$36.00</div>
+                                </div>
+                                <div className="cart-counter-action">
+                                    <div className="quantity-edit">
+                                        <input type="text" className="input" value="1"/>
+                                        <div className="button-wrapper-action">
+                                            <button className="button"><i className="fa-regular fa-chevron-down"></i></button>
+                                            <button className="button plus">+<i className="fa-regular fa-chevron-up"></i></button>
+                                        </div>
+                                    </div>
+                                    <a href="#" className="rts-btn btn-primary radious-sm with-icon">
+                                        <div className="btn-text">
+                                            Add
+                                        </div>
+                                        <div className="arrow-icon">
+                                            <i className="fa-regular fa-cart-shopping"></i>
+                                        </div>
+                                        <div className="arrow-icon">
+                                            <i className="fa-regular fa-cart-shopping"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*/               
                 )}
             </div>
 

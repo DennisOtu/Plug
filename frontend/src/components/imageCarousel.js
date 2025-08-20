@@ -1,45 +1,55 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef , useState} from 'react'
 
 function ImageCarousel(props) {
     const carouselRef = useRef(null)
+    const nextBtnRef = useRef(null)
+    const prevBtnRef = useRef(null)
+    
     useEffect(()=>{
         const track = carouselRef.current
+        if(!track && track.current) return;
         console.log(track)    
-        try {
-            const slides = Array.from(track.children)
-            console.log(slides)
-            const nextBtn = document.querySelector('.carouselNext')
-            const previousBtn = document.querySelector('.carouselPrev')
-            // stack slides next to each other horizontally
-            slides.forEach((slide, index) => {
-                const slideWidth = slide.getBoundingClientRect().width
-                slide.style.left = `${ slideWidth * index }px`
-                console.log(index)
-            })
 
-            function moveToSlide(track, currentSlide, targetSlide) {
-                track.style.transform = `translateX(-${targetSlide.style.left})`
-                currentSlide.classList.remove('activeSlide')
-                targetSlide.classList.add('activeSlide')
-            }
+        const nextBtn = nextBtnRef.current
+        const prevBtn = prevBtnRef.current
 
+        const slides = Array.from(track.children)
+        console.log(slides)
+        //const nextBtn = document.querySelector('.carouselNext')
+        //const previousBtn = document.querySelector('.carouselPrev')
+
+        // stack slides next to each other horizontally
+        slides.forEach((slide, index) => {
+            const slideWidth = slide.getBoundingClientRect().width
+            slide.style.left = `${ slideWidth * index }px`
+            console.log(index)
+        })
+
+        function moveToSlide(track, currentSlide, targetSlide) {
+            track.style.transform = `translateX(-${targetSlide.style.left})`
+            currentSlide.classList.remove('activeSlide')
+            targetSlide.classList.add('activeSlide')
+        }
+
+        if(nextBtnRef && nextBtnRef.current){
             nextBtn.addEventListener('click', e => {
                 const currentSlide = track.querySelector('.activeSlide')
                 const nextSlide = currentSlide.nextElementSibling
                 
                 moveToSlide(track, currentSlide, nextSlide)
             })
+        }
 
-            previousBtn.addEventListener('click', e => {
+        if(prevBtnRef && prevBtnRef.current){
+            prevBtn.addEventListener('click', e => {
                 const currentSlide = track.querySelector('.activeSlide')
                 const prevSlide = currentSlide.previousElementSibling
 
                 moveToSlide(track, currentSlide, prevSlide)
             })
-        } catch (error) {
-            console.log(error)
         }
-    })
+
+    }, [])
 
 
     return (
@@ -56,8 +66,8 @@ function ImageCarousel(props) {
                     <h1 style={{backgroundColor: 'rgba(0, 0, 0, 0.671)'}}>Slide 3</h1>
                 </div>
             </div>
-            <button className="carouselPrev"><i className="fa fa-arrow-left"></i> </button>
-            <button className="carouselNext"><i className="fa fa-arrow-right"></i></button>
+            <button className="carouselPrev" ref={ prevBtnRef }><i className="fa fa-arrow-left"></i> </button>
+            <button className="carouselNext" ref={ nextBtnRef }><i className="fa fa-arrow-right"></i></button>
 
             {/*<div className="background-light-gray-color rts-section-gap bg_light-1 pt_sm--20">
                 <div className="rts-banner-area-one mb--30">

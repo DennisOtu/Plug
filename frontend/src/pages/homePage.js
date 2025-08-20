@@ -11,9 +11,7 @@ function HomePage(props) {
         <div>
             <NavBar />
 
-            <div>
-                <ImageCarousel />
-            </div>
+            <ImageCarousel />
 
             <DealsList />
 
