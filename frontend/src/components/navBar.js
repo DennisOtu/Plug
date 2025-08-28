@@ -1,4 +1,5 @@
 import pluggLogo from '../images/Plugg Logo.png'
+import plugLogo from '../images/plugLogoWhiteBG.png'
 import threeBars from '../images/icons/bar-1.svg'
 import icon01 from '../images/icons/01.svg'
 import icon02 from '../images/icons/02.svg'
@@ -107,7 +108,7 @@ function NavBar(props) {
                                 <div className="category-search-wrapper">
                                     <Link to='/' className="navLeft d-flex flex-row topNav">
 
-                                        <img className="brandLogo" src={pluggLogo} style={{ marginTop: '8px', marginRight: '8px'}} />
+                                        <img className="brandLogo" src={plugLogo} style={{ marginTop: '8px', marginRight: '8px'}} />
                                         <h3>PLUG</h3>  
 
                                     </Link>
@@ -229,8 +230,8 @@ function NavBar(props) {
                                                     <p>Spend More <span>$125.00</span> to reach <span>Free Shipping</span></p>
                                                 </div>
                                                 <div className="button-wrapper d-flex align-items-center justify-content-between">
-                                                    <Link href="cart.html" className="rts-btn btn-primary ">View Cart</Link>
-                                                    <Link href="checkout.html" className="rts-btn btn-primary border-only">CheckOut</Link>
+                                                    <Link to={'/cart'} className="rts-btn btn-primary ">View Cart</Link>
+                                                    <Link to={'/checkout'} className="rts-btn btn-primary border-only">CheckOut</Link>
                                                 </div>
                                             </div>
                                         </div>

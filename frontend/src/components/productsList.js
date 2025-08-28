@@ -5,8 +5,9 @@ import ReactPaginate from 'react-paginate'
 import { useState, useEffect } from 'react'
 
 function ProductsList() {
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(0)
     const [pageCount, setPageCount] = useState(0)
+
 
     const getAll = () => {
         return axios.get(`http://localhost:8000/api/v1/product/all?page=${page}`)
@@ -18,18 +19,21 @@ function ProductsList() {
     useEffect(()=>{
         if (data) {
             const total = data.data.count
+            //const newPage = Math.floor(Math.random() * 9)
+            //console.log('page = ' + page)
+            //setPage(newPage)
             const currentPageCount = Math.ceil(total / 20)
             setPageCount(currentPageCount)
             console.log('useEffect productList component')
         }
     })
     
-    const changePage = (e) => {
-    	const pageSelected = e.selected + 1
-        setPage(pageSelected)
-        refetch()
-        console.log(`selected page : page ${pageSelected}`)
-    }
+    //const changePage = (e) => {
+    //	const pageSelected = e.selected + 1
+      //  setPage(pageSelected)
+        //refetch()
+        //console.log(`selected page : page ${pageSelected}`)
+    //}
 
     return (
         <>
@@ -49,17 +53,19 @@ function ProductsList() {
                             </div>
 
                             <div style={{ marginTop: '8px'}}>
-                                <p style={{
+                                <h2 className="productCardInfo" style={{
                                     paddingInline: '5px', fontFamily: 'var(--fontHead)', 
                                     fontSize: '14px', fontWeight: 'bold', textAlign: 'left', 
-                                    height: '40px', overflow: 'hidden'}}>{ product.name }
-                                </p>
-
-                                <p style={{fontWeight: 'bold', marginBlock: '0', textAlign: 'left', color: 'var(--pluggRed)'}}>${ product.price }</p>
-
+                                    height: '35px', overflow: 'hidden'}}>{ product.name }
+                                </h2>
                             </div>
                         </Link>
-                        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '0.5rem'}}>
+                        <p style={{ color: 'grey', fontSize: '14px' }}>
+                            { product.size }
+                        </p>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.5rem' }}>
+                            <p style={{fontWeight: 'bold', marginBlock: '0', textAlign: 'left', color: 'var(--pluggRed)'}}>${ product.price }</p>
+
                             <button className="addBtn" data-product="{{ product.id }}" data-action="add">
         	                    <i className="fas fa-plus"></i><i class="fas fa-shopping-cart"></i>
                         	</button>
@@ -123,13 +129,14 @@ function ProductsList() {
                 )}
             </div>
 
-            <ReactPaginate breakLabel={'...'} previousLabel={"prev"} nextLabel={"next"} pageCount={pageCount}
+            {/*<ReactPaginate breakLabel={'...'} previousLabel={"prev"} nextLabel={"next"} pageCount={pageCount}
                 onPageChange={changePage} pageRangeDisplayed={5} containerClassName={"paginationDiv"} previousLinkClassName={""}
                 nextLinkClassName={""} disabledClassName={""} activeClassName={"paginationActive"}
                 renderOnZeroPageCount={null}
-            />
+            />*/}
         </>
     )
 }
 export default ProductsList
+
 

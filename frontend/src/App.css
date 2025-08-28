@@ -74,8 +74,7 @@ a:hover {
 }
 
 .brandLogo {
-	height: 30px;
-    filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg) brightness(94%) contrast(117%);
+	height: 40px;
 }
 
 .navRight {
@@ -151,8 +150,19 @@ a:hover {
 }
 
 .dealsDiv {
-	display: flex;
-	flex-direction: column;
+	height: 80vh;
+	width: 100vw;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 8px;
+	padding: 20px;
+	border: 1px solid black;
+	background-color: rgba(223, 165, 153, 0.865);
+}
+
+.dealsDiv div {
+	border: 1px solid black;
+	border-radius: 5px;
 }
 
 .dealsCard {
@@ -190,6 +200,20 @@ a:hover {
 	border-radius: 0 0 5px 5px;
 }
 
+.discountsDiv {
+	height: 70vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin-top: 40px;
+}
+
+.discountCard {
+	border: 1px solid grey;
+	border-radius: 8px;
+	padding: 20px;
+	margin: 10px;
+}
+
 .box-element{
 	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
 	background-color: #fff;
@@ -212,19 +236,21 @@ a:hover {
 }
 
 .productCard:hover {
-	border: 1px solid rgba(136, 132, 132, 0.35);
-	box-shadow: 1px 2px 16px rgb(197, 193, 193);
-	transform: translateY(-3px);
+	transform: translateY(-4px);
 }
 
 .productImg{
 	position: relative;
 	width: 100%;
 	height: 200px;
+	padding: 38px;
+	border: 0.5px solid rgb(218, 218, 218);
+	border-radius: 8px;
+	margin-bottom: 8px;
 }
 
 .productCardInfo:hover {
-	color: var(--pluggBlack);
+	color: green;
 }
 
 .addBtn {
@@ -311,9 +337,14 @@ a:hover {
 	margin-inline: 4px;
 }
 
+.paginationDiv li:hover {
+	cursor: pointer;
+}
+
 .paginationActive {
 	color: white;
 	background-color: var(--pluggRed);
+	border-radius: 5px;
 }
 
 
