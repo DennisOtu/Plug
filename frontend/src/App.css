@@ -154,6 +154,7 @@ a:hover {
 }
 
 .dealsDiv {
+<<<<<<< Updated upstream
 	height: 20vh;
 	background-color: teal;
 	display: flex;
@@ -163,43 +164,93 @@ a:hover {
 	overflow: hidden;
 	justify-content: center;
 	align-items: center;
+=======
+	height: 50vh;
+	width: 100vw;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 16px;
+	padding-block: 40px;
+	padding-right: 30px;
+	padding-left: 20px;
+	background-color: rgb(242, 242, 242);
+>>>>>>> Stashed changes
 }
 
 .dealsCard {
-	height:88%;
-	width: 16%;
-	border: 1px solid var(--pluggRed) ;
-	border-radius: 5px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 	background-color: white;
-	margin: 8px;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
+
 }
 
-.dealsCard:hover {
-	cursor: pointer;
-}
-
-.dealsCard img {
-	height: 80%;
-	width: 100%;
-	padding: 8px;
-	
-}
-
-.dealsCard div {
-	height: 100%;
-	background: var(--pluggRed);
-	display: flex;
+.dealsIcon {
+	width: 30%;
 	justify-content: center;
 	align-items: center;
-	color: white;
-	font-family: var(--fontHead);
-	font-size: 14px;
-	border-radius: 0 0 5px 5px;
 }
 
+<<<<<<< Updated upstream
+=======
+.discountsDiv {
+	height: 40vh;
+	display: grid;
+	grid-gap: 20px;
+	padding-inline: 20px;
+	grid-template-columns: 1fr 1fr;
+	margin-block: 20px;
+}
+
+
+.discountCard1 {
+	border-radius: 8px;
+	padding: 20px;
+	background-image: url("./images/top-banner-01.jpg");
+	background-size: cover;
+}
+
+.discountCard2 {
+	border-radius: 8px;
+	padding: 20px;
+	background-image: url("./images/top-banner-02.jpg");
+	background-size: cover;
+}
+
+.blogPostParent {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+	padding-inline: 10px;
+	margin-block: 40px;
+}
+
+.blogPostChild {
+  border: 1px solid #E2E2E2;
+  border-radius: 6px;
+}
+
+.blogPostChild .thumbnail {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  border-radius: 8px 8px 0 0;
+}
+
+.blogPostChild .blogText {
+	height: 100px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.blogPostChild .blog-body {
+	padding: 20px;
+}
+
+>>>>>>> Stashed changes
 .box-element{
 	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
 	background-color: #fff;
@@ -212,6 +263,7 @@ a:hover {
 }
 
 .productCard {
+<<<<<<< Updated upstream
 	width: 15vw;
 	height: 40vh;
 	border-radius: 0.25rem;
@@ -222,11 +274,35 @@ a:hover {
 	border: 1px solid rgba(136, 132, 132, 0.35);
 	box-shadow: 1px 2px 16px rgb(197, 193, 193);
 	transform: translateY(-3px);
+=======
+	width: 285px;
+	height: 60%;
+	border-radius: 8px;
+	margin: 8px;
+	background-color: white;
+	overflow: hidden;
+}
+
+.productCard:hover {
+	box-shadow: 1px 1px 4px 1px rgb(224, 224, 224);
+>>>>>>> Stashed changes
 }
 
 .productImg{
 	position: relative;
+<<<<<<< Updated upstream
 	width: 50%;
+=======
+	width: 100%;
+	height: 230px;
+	padding: 20px;
+	border-radius: 8px 8px 0 0;
+	background-size: cover;
+}
+
+.productCardInfo {
+	padding-inline: 20px;
+>>>>>>> Stashed changes
 }
 
 .productCardInfo:hover {
@@ -244,9 +320,10 @@ a:hover {
 	border-radius: 8px;
 	font-size: 12px;
 	display: flex;
-	align-self: center;
+	align-self: right;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 3rem;
 }
 
 .btnPill:hover {

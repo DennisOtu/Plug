@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 import ReactPaginate from 'react-paginate'
 import { useState, useEffect } from 'react'
 
+<<<<<<< Updated upstream:frontend/src/components/productsList.js
 function ProductsList() {
+=======
+function BestSellersList() {
+>>>>>>> Stashed changes:frontend/src/components/bestSellersList.js
     const [page, setPage] = useState(1)
     const [pageCount, setPageCount] = useState(0)
 
@@ -18,7 +22,14 @@ function ProductsList() {
     useEffect(()=>{
         if (data) {
             const total = data.data.count
+<<<<<<< Updated upstream:frontend/src/components/productsList.js
             const currentPageCount = Math.ceil(total / 20)
+=======
+            //const newPage = Math.floor(Math.random() * 9)
+            //console.log('page = ' + page)
+            //setPage(newPage)
+            const currentPageCount = Math.ceil(total / 10)
+>>>>>>> Stashed changes:frontend/src/components/bestSellersList.js
             setPageCount(currentPageCount)
             console.log('useEffect ran')
         }
@@ -38,7 +49,8 @@ function ProductsList() {
                 display: 'flex',
                 flexDirection: 'row',
                 flexWrap: 'wrap',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                marginBlock: '3rem'
             }}>
                 {isLoading && <h3>Loading...</h3>}
                 {data && data.data.results.map(product => 
@@ -48,8 +60,23 @@ function ProductsList() {
                                 <img className="productImg" src={ product.image_url }/>
                             </div>
                             <div style={{ marginTop: '8px'}}>
+<<<<<<< Updated upstream:frontend/src/components/productsList.js
                                 <p style={{paddingInline: '1rem', fontFamily: 'var(--fontHead)', fontSize: '14px', textAlign: 'center', height: '40px', overflow: 'hidden'}}>{ product.name }</p>
                                 <p style={{fontWeight: 'bold', marginBlock: '0', textAlign: 'center'}}>${ product.price }</p>
+=======
+                                <h2 className="productCardInfo" style={{
+                                    paddingInline: '20px', fontFamily: 'var(--fontHead)', 
+                                    fontSize: '14px', fontWeight: 'bold', textAlign: 'left', 
+                                    height: '35px', overflow: 'hidden'}}>{ product.name }
+                                </h2>
+                            </div>
+                        </Link>
+                        <p style={{ color: 'grey', fontSize: '14px', paddingInline: '20px' }}>
+                            { product.size }
+                        </p>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', paddingInline: '20px' }}>
+                            <p style={{fontWeight: 'bold', textAlign: 'left', color: 'var(--pluggRed)'}}>${ product.price }</p>
+>>>>>>> Stashed changes:frontend/src/components/bestSellersList.js
 
                             </div>
 
@@ -63,6 +90,7 @@ function ProductsList() {
                     </div>
                     
                 )}
+             
             </div>
 
             <ReactPaginate breakLabel={'...'} previousLabel={"prev"} nextLabel={"next"} pageCount={pageCount}
@@ -73,5 +101,5 @@ function ProductsList() {
         </>
     )
 }
-export default ProductsList
+export default BestSellersList
 

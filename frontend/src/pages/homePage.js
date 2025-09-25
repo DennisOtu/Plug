@@ -1,8 +1,10 @@
 import NavBar from '../components/navBar'
-import CategoriesList from '../components/categoriesList'
 import ImageCarousel from '../components/imageCarousel'
-import ProductsList from '../components/productsList'
+import PlugPerks from '../components/plugPerks'
 import DealsList from '../components/dealsList'
+import TrendingProducts from '../components/trendingList'
+import BestSellers from '../components/bestSellersList'
+import BlogPosts from '../components/blogPosts'
 import Footer from '../components/footer'
 
 function HomePage(props) {
@@ -24,7 +26,13 @@ function HomePage(props) {
 
             <DealsList />
 
-            <ProductsList />
+            <TrendingProducts />
+
+            <PlugPerks />
+
+            <BestSellers />
+
+            <BlogPosts />
 
             <Footer />
         </div>
