@@ -11,16 +11,7 @@ function HomePage(props) {
         <div>
             <NavBar />
 
-            <div style={{
-                display: 'flex',
-                flexDirection: 'row',
-                height: '50vh',
-                marginTop: 'var(--navBarHeight)',
-                padding: '1px'
-            }}>
-                <CategoriesList />
-                <ImageCarousel />
-            </div>
+            <ImageCarousel />
 
             <DealsList />
 
