@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import ReactPaginate from 'react-paginate'
 import { useState, useEffect } from 'react'
 
-function ProductsList() {
-    const [page, setPage] = useState(0)
+function TrendingProducts() {
+    const [page, setPage] = useState(1)
     const [pageCount, setPageCount] = useState(0)
 
 
@@ -22,7 +22,7 @@ function ProductsList() {
             //const newPage = Math.floor(Math.random() * 9)
             //console.log('page = ' + page)
             //setPage(newPage)
-            const currentPageCount = Math.ceil(total / 20)
+            const currentPageCount = Math.ceil(total / 10)
             setPageCount(currentPageCount)
             console.log('useEffect productList component')
         }
@@ -42,7 +42,8 @@ function ProductsList() {
                 display: 'flex',
                 flexDirection: 'row',
                 flexWrap: 'wrap',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                marginBlock: '3rem'
             }}>
                 {isLoading && <h3>Loading...</h3>}
                 {data && data.data.results.map(product => 
@@ -51,20 +52,20 @@ function ProductsList() {
                             <div style={{ display: 'flex' , flexDirection: 'row' , justifyContent: 'center'}}>
                                 <img className="productImg" src={ product.main_image }/>
                             </div>
-
+                            
                             <div style={{ marginTop: '8px'}}>
                                 <h2 className="productCardInfo" style={{
-                                    paddingInline: '5px', fontFamily: 'var(--fontHead)', 
+                                    paddingInline: '20px', fontFamily: 'var(--fontHead)', 
                                     fontSize: '14px', fontWeight: 'bold', textAlign: 'left', 
                                     height: '35px', overflow: 'hidden'}}>{ product.name }
                                 </h2>
                             </div>
                         </Link>
-                        <p style={{ color: 'grey', fontSize: '14px' }}>
+                        <p style={{ color: 'grey', fontSize: '14px', paddingInline: '20px' }}>
                             { product.size }
                         </p>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.5rem' }}>
-                            <p style={{fontWeight: 'bold', marginBlock: '0', textAlign: 'left', color: 'var(--pluggRed)'}}>${ product.price }</p>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', paddingInline: '20px' }}>
+                            <p style={{fontWeight: 'bold', textAlign: 'left', color: 'var(--pluggRed)'}}>${ product.price }</p>
 
                             <button className="addBtn" data-product="{{ product.id }}" data-action="add">
         	                    <i className="fas fa-plus"></i><i class="fas fa-shopping-cart"></i>
@@ -127,6 +128,7 @@ function ProductsList() {
                         </div>
                     </div>*/               
                 )}
+             
             </div>
 
             {/*<ReactPaginate breakLabel={'...'} previousLabel={"prev"} nextLabel={"next"} pageCount={pageCount}
@@ -137,6 +139,6 @@ function ProductsList() {
         </>
     )
 }
-export default ProductsList
+export default TrendingProducts
 
 
