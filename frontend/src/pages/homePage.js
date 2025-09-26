@@ -4,6 +4,7 @@ import PlugPerks from '../components/plugPerks'
 import TrendingProducts from '../components/trendingList'
 import BestSelling from '../components/bestSellersList'
 import DealsList from '../components/dealsList'
+import BlogPosts from '../components/blogPosts'
 import Footer from '../components/footer'
 
 function HomePage(props) {
@@ -22,6 +23,7 @@ function HomePage(props) {
 
             <BestSelling />
 
+            <BlogPosts />
 
             <Footer />
         </div>
