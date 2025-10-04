@@ -97,25 +97,21 @@ a:hover {
 	font-weight: bolder;
 }
 
-.slick-prev:before, .slick-next:before { 
-	color: green !important;
-}
 
 .slick-prev {
-  left: 3% !important;
-  z-index: 1;
+	left: 3% !important;
+	z-index: 1;
 }
 
 .slick-next {
-  right: 3% !important;
-  z-index: 1;
+	right: 3% !important;
+	z-index: 1;
 }
 
 .slick-slide div {
-	height: 80vh;
+	height: 80vh !important;
 	align-content: center;
 	text-align: center;
-	background-color: aqua;
 }
 
 .perksContainer {
@@ -157,7 +153,6 @@ a:hover {
 	grid-template-columns: 1fr 1fr;
 	margin-top: 50px !important;
 }
-
 
 .discountCard1 {
 	border-radius: 8px;

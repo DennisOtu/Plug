@@ -2,6 +2,10 @@ import { React, useEffect, useRef , useState} from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import sliderImg01 from "../images/slider-01.jpg"
+import sliderImg02 from "../images/slider-02.jpg"
+import sliderImg03 from "../images/slider-03.jpg"
+
 
 function ImageCarousel(props) {
   const settings = {
@@ -17,13 +21,13 @@ function ImageCarousel(props) {
             <Slider {...settings}>
 
                 <div>
-                    <h1>Slide 1</h1>
+                    <img src={sliderImg01} />
                 </div>
                 <div>
-                    <h1>Slide 2</h1>
+                    <img src={sliderImg02} />
                 </div>
                 <div>
-                    <h1>Slide 3</h1>
+                    <img src={sliderImg03} />
                 </div>
 
             </Slider>
