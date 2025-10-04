@@ -90,7 +90,6 @@ a:hover {
 
 .navRight a:hover {
 	transform: translateY(1px);
-
 }
 
 .badgeCart {
@@ -98,55 +97,25 @@ a:hover {
 	font-weight: bolder;
 }
 
-.heroDiv{
+.slick-prev:before, .slick-next:before { 
+	color: green !important;
+}
+
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+}
+
+.slick-next {
+  right: 3% !important;
+  z-index: 1;
+}
+
+.slick-slide div {
 	height: 80vh;
-	width: 100vw;
-	background: var(--pluggGrey);
-	color: white;
-	overflow: hidden;
-}
-
-.heroCarousel {
-	position: relative;
-	height: inherit;
-}
-
-.heroCarousel div {
-	position: absolute;
-	height: inherit;
-	width: 100vw;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-}
-
-
-.carouselPrev {
-	height: 80px;
-	width: 80px;
-	border-radius: 50%;
-	position: absolute;
-	z-index: 9990;
-	left: 2vw;
-	top:70vh;
-	cursor: pointer;
-	background: rgba(0, 0, 0, 0.509);
-	color: white;
-
-}
-
-.carouselNext {
-	height: 80px;
-	width: 80px;
-	border-radius: 50%;
-	position: absolute;
-	z-index: 9990;
-	left: 90vw;
-	top: 70vh;
-	cursor: pointer;
-	background: rgba(0, 0, 0, 0.804);
-	color: white;
+	align-content: center;
+	text-align: center;
+	background-color: aqua;
 }
 
 .perksContainer {
@@ -159,9 +128,7 @@ a:hover {
 	padding-right: 30px;
 	padding-left: 20px;
 	background-color: rgb(242, 242, 242);
-
 }
-
 
 .perksCard {
 	border-radius: 8px;
@@ -170,7 +137,6 @@ a:hover {
 	align-items: center;
 	justify-content: center;
 	background-color: white;
-
 }
 
 .perksCard h4 {
@@ -181,7 +147,6 @@ a:hover {
 	width: 30%;
 	justify-content: center;
 	align-items: center;
-
 }
 
 .discountsDiv {
@@ -190,7 +155,7 @@ a:hover {
 	grid-gap: 20px;
 	padding-inline: 20px;
 	grid-template-columns: 1fr 1fr;
-	margin-block: 20px;
+	margin-top: 50px !important;
 }
 
 
