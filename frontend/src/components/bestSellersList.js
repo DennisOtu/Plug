@@ -5,7 +5,7 @@ import ReactPaginate from 'react-paginate'
 import { useState, useEffect } from 'react'
 
 function BestSelling() {
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(6)
     const [pageCount, setPageCount] = useState(0)
 
 
@@ -13,7 +13,7 @@ function BestSelling() {
         return axios.get(`http://localhost:8000/api/v1/product/all?page=${page}`)
     }
 
-    const { data, isLoading, refetch } = useQuery('allProducts', getAll, { staleTime: 0 })
+    const { data, isLoading, refetch } = useQuery('bestSelling', getAll, { staleTime: 0 })
 
 
     useEffect(()=>{
