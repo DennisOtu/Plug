@@ -25,6 +25,10 @@ class ProductDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+def categoryList(request):
+    queryset = Product.objects.values('root_category').distinct()
+    data = list(queryset)
+    return JsonResponse(data, safe=False)
 
 def cart(request):
     data = cartData(request)

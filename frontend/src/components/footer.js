@@ -78,16 +78,14 @@ const Footer = () => {
                                         </div>
                                         <div class="info">
                                             <span>Have Question? Call Us 24/7</span>
-                                            <a href="#" class="number">+258 3692 2569</a>
+                                            <Link to="#" class="number">+233 0123 4567</Link>
                                         </div>
                                     </div>
                                     <div class="opening-hour">
                                         <div class="single">
-                                            <p>Monday - Friday: <span>8:00am - 6:00pm</span></p>
+                                            <p>Monday - Saturday: <span>8:00am - 6:00pm</span></p>
                                         </div>
-                                        <div class="single">
-                                            <p>Saturday: <span>8:00am - 6:00pm</span></p>
-                                        </div>
+
                                         <div class="single">
                                             <p>Sunday: <span>Service Close</span></p>
                                         </div>
@@ -97,11 +95,11 @@ const Footer = () => {
                                     <h3 class="footer-title">Our Stores</h3>
                                     <div class="footer-nav">
                                         <ul>
-                                            <li><a href="#">Delivery Information</a></li>
-                                            <li><a href="#">Privacy Policy</a></li>
-                                            <li><a href="#">Terms & Conditions</a></li>
-                                            <li><a href="#">Support Center</a></li>
-                                            <li><a href="#">Careers</a></li>
+                                            <li><Link to="#">Delivery Information</Link></li>
+                                            <li><Link to="#">Privacy Policy</Link></li>
+                                            <li><Link to="#">Terms & Conditions</Link></li>
+                                            <li><Link to="#">Support Center</Link></li>
+                                            <li><Link to="#">Careers</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -109,11 +107,11 @@ const Footer = () => {
                                     <h3 class="footer-title">Shop Categories</h3>
                                     <div class="footer-nav">
                                         <ul>
-                                            <li><a href="#">Contact Us</a></li>
-                                            <li><a href="#">Information</a></li>
-                                            <li><a href="#">About Us</a></li>
-                                            <li><a href="#">Careers</a></li>
-                                            <li><a href="#">Nest Stories</a></li>
+                                            <li><Link to="#">Contact Us</Link></li>
+                                            <li><Link to="#">Information</Link></li>
+                                            <li><Link to="#">About Us</Link></li>
+                                            <li><Link to="#">Careers</Link></li>
+                                            <li><Link to="#">Nest Stories</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -121,11 +119,11 @@ const Footer = () => {
                                     <h3 class="footer-title">Useful Links</h3>
                                     <div class="footer-nav">
                                         <ul>
-                                            <li><a href="#">Cancellation & Returns</a></li>
-                                            <li><a href="#">Report Infringement</a></li>
-                                            <li><a href="#">Payments</a></li>
-                                            <li><a href="#">Shipping</a></li>
-                                            <li><a href="#">FAQ</a></li>
+                                            <li><Link to="#">Cancellation & Returns</Link></li>
+                                            <li><Link to="#">Report Infringement</Link></li>
+                                            <li><Link to="#">Payments</Link></li>
+                                            <li><Link to="#">Shipping</Link></li>
+                                            <li><Link to="#">FAQ</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -148,11 +146,11 @@ const Footer = () => {
                                 <div class="social-one-wrapper">
                                     <span>Follow Us:</span>
                                     <ul>
-                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                        <li><Link to="#"><i class="fa-brands fa-facebook-f"></i></Link></li>
+                                        <li><Link to="#"><i class="fa-brands fa-twitter"></i></Link></li>
+                                        <li><Link to="#"><i class="fa-brands fa-youtube"></i></Link></li>
+                                        <li><Link to="#"><i class="fa-brands fa-whatsapp"></i></Link></li>
+                                        <li><Link to="#"><i class="fa-brands fa-instagram"></i></Link></li>
                                     </ul>
                                 </div>
                                 <div class="payment-access">
