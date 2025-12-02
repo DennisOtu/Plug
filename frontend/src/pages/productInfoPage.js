@@ -40,32 +40,29 @@ const ProductInfoPage = () => {
                                                                 </div>
                                                             </div>
                                                             <div className="thumb-wrapper two filterd-items hide">
-                                                                <div className="product-thumb zoom" onmousemove="zoom(event)" ><img src="assets/images/shop/02.jpg" alt="product-thumb"/>
+                                                                <div className="product-thumb zoom" onmousemove="zoom(event)" ><img src={ data.data.image_urls.split('"')[1] } alt="product-thumb"/>
                                                                 </div>
                                                             </div>
                                                             <div className="thumb-wrapper three filterd-items hide">
-                                                                <div className="product-thumb zoom" onmousemove="zoom(event)" ><img src="assets/images/shop/03.jpg" alt="product-thumb"/>
+                                                                <div className="product-thumb zoom" onmousemove="zoom(event)" ><img src={ data.data.image_urls.split('"')[3] } alt="product-thumb"/>
                                                                 </div>
                                                             </div>
                                                             <div className="thumb-wrapper four filterd-items hide">
-                                                                <div className="product-thumb zoom" onmousemove="zoom(event)" ><img src="assets/images/shop/04.jpg" alt="product-thumb"/>
+                                                                <div className="product-thumb zoom" onmousemove="zoom(event)" ><img src={ data.data.image_urls.split('"')[5] } alt="product-thumb"/>
                                                                 </div>
-                                                            </div>
-                                                            <div className="thumb-wrapper five filterd-items hide">
-                                                                <div className="product-thumb zoom" onmousemove="zoom(event)" ><img src="assets/images/shop/05.jpg" alt="product-thumb"/>
-                                                                </div>
-                                                            </div>
+                                                            </div>                                                        
+                                                        
                                                             <div className="product-thumb-filter-group">
-                                                                <div className="thumb-filter filter-btn active" data-show=".one"><img src="assets/images/shop/01.jpg" alt="product-thumb-filter"/></div>
-                                                                <div className="thumb-filter filter-btn" data-show=".two"><img src="assets/images/shop/02.jpg" alt="product-thumb-filter"/></div>
-                                                                <div className="thumb-filter filter-btn" data-show=".three"><img src="assets/images/shop/03.jpg" alt="product-thumb-filter"/></div>
-                                                                <div className="thumb-filter filter-btn" data-show=".four"><img src="assets/images/shop/04.jpg" alt="product-thumb-filter"/></div>
-                                                                <div className="thumb-filter filter-btn" data-show=".five"><img src="assets/images/shop/05.jpg" alt="product-thumb-filter"/></div>
+                                                                <div className="thumb-filter filter-btn active" data-show=".one"><img src={ data.data.image_urls.split('"')[1] } alt="product-thumb-filter"/></div>
+                                                                <div className="thumb-filter filter-btn" data-show=".two"><img src={ data.data.image_urls.split('"')[3] } alt="product-thumb-filter"/></div>
+                                                                <div className="thumb-filter filter-btn" data-show=".three"><img src={ data.data.image_urls.split('"')[5] } alt="product-thumb-filter"/></div>
                                                             </div>
+                                                        
+                                                            
                                                         </div>
                                                         <div className="contents">
                                                             <div className="product-status">
-                                                                <span className="product-catagory">Dress</span>
+                                                                <span className="product-catagory">{ data.data.root_category }</span>
                                                                 <div className="rating-stars-group">
                                                                     <div className="rating-star"><i className="fas fa-star"></i></div>
                                                                     <div className="rating-star"><i className="fas fa-star"></i></div>
@@ -100,12 +97,10 @@ const ProductInfoPage = () => {
                                                                 <a href="javascript:void(0);" className="rts-btn btn-primary ml--20"><i className="fa-light fa-heart"></i></a>
                                                             </div>
                                                             <div className="product-uniques">
-                                                                <span className="sku product-unipue mb--10"><span style={{fontWeight: 400, margiRight: '10px'}}>SKU: </span> BO1D0MX8SJ</span>
-                                                                <span className="catagorys product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Categories: </span> { data.data.category }</span>
-                                                                <span className="tags product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Tags: </span> fashion, t-shirts, Men</span>
-                                                                <span className="tags product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>LIFE:: </span> 6 Months</span>
-                                                                <span className="tags product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Type: </span> original</span>
-                                                                <span className="tags product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Category: </span> Beverages, Dairy & Bakery</span>
+                                                                <span className="catagorys product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Categories: </span> { data.data.root_category }</span>
+                                                                <span className="tags product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Color: </span> { data.data.color }</span>
+                                                                <span className="tags product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Size: </span> { data.data.size }</span>
+                                                                <span className="tags product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Category: </span> { data.data.category }</span>
                                                             </div>
                                                             <div className="share-option-shop-details">
                                                                 <div className="single-share-option">
@@ -122,7 +117,7 @@ const ProductInfoPage = () => {
                                                                 </div>
                                                                 <div className="single-share-option">
                                                                     <div className="icon">
-                                                                        <i className="fa-light fa-code-compare"></i>
+                                                                        <i className="fa-solid fa-code-compare"></i>
                                                                     </div>
                                                                     <span>Compare</span>
                                                                 </div>
