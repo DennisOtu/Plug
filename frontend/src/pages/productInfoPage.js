@@ -3,6 +3,7 @@ import { useQuery } from 'react-query'
 import axios from 'axios'
 import { useParams } from "react-router-dom"
 import Footer from '../components/footer'
+import { Link } from 'react-router-dom'
 
 const ProductInfoPage = () => {
     const { productID } = useParams()
@@ -70,7 +71,7 @@ const ProductInfoPage = () => {
                                                                     <span>10 Reviews</span>
                                                                 </div>
                                                             </div>
-                                                            <h2 className="product-title">{ data.data.name }</h2>
+                                                            <h2 className="product-title">{ data.data.name.split(',')[0] }</h2>
                                                             <p className="mt--20 mb--20">
                                                                 { data.data.description }
                                                             </p>
@@ -83,18 +84,14 @@ const ProductInfoPage = () => {
                                                                         <button className="button plus">+<i className="fal fa-plus plus"></i></button>
                                                                     </div>
                                                                 </div>
-                                                                <a href="#" className="rts-btn btn-primary radious-sm with-icon">
+                                                                <Link to="#" className="rts-btn btn-primary radious-sm with-icon">
                                                                     <div className="btn-text">
                                                                         Add To Cart
                                                                     </div>
-                                                                    <div className="arrow-icon">
+                                                                    <div className="">
                                                                         <i className="fa-regular fa-cart-shopping"></i>
                                                                     </div>
-                                                                    <div className="arrow-icon">
-                                                                        <i className="fa-regular fa-cart-shopping"></i>
-                                                                    </div>
-                                                                </a>
-                                                                <a href="javascript:void(0);" className="rts-btn btn-primary ml--20"><i className="fa-light fa-heart"></i></a>
+                                                                </Link>
                                                             </div>
                                                             <div className="product-uniques">
                                                                 <span className="catagorys product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Categories: </span> { data.data.root_category }</span>
@@ -436,7 +433,7 @@ const ProductInfoPage = () => {
                                                 <div className="swiper-slide">
                                                     <div className="single-shopping-card-one">
                                                         <div className="image-and-action-area-wrapper">
-                                                            <a href="#" className="thumbnail-preview">
+                                                            <Link to="#" className="thumbnail-preview">
                                                                 <div className="badge">
                                                                     <span>25% <br/> 
                                                                         Off
@@ -444,7 +441,7 @@ const ProductInfoPage = () => {
                                                                     <i className="fa-solid fa-bookmark"></i>
                                                                 </div>
                                                                 <img src="assets/images/grocery/01.jpg" alt="grocery"/>
-                                                            </a>
+                                                            </Link>
                                                             <div className="action-share-option">
                                                                 <div className="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                                     <i className="fa-light fa-heart"></i>
@@ -463,10 +460,10 @@ const ProductInfoPage = () => {
                                                                 <i className="fa-light fa-clock"></i>
                                                                 9 MINS
                                                             </div>
-                                                            <a href="#">
+                                                            <Link to="#">
                                                                 <h4 className="title">Nestle Cerelac Mixed Fruits &
                                                                     Wheat with Milk</h4>
-                                                            </a>
+                                                            </Link>
                                                             <span className="availability">500g Pack</span>
                                                             <div className="price-area">
                                                                 <span className="current">$36.00</span>
@@ -480,7 +477,7 @@ const ProductInfoPage = () => {
                                                                         <button className="button plus">+<i className="fa-regular fa-chevron-up"></i></button>
                                                                     </div>
                                                                 </div>
-                                                                <a href="#" className="rts-btn btn-primary radious-sm with-icon">
+                                                                <Link to="#" className="rts-btn btn-primary radious-sm with-icon">
                                                                     <div className="btn-text">
                                                                         Add To Cart
                                                                     </div>
@@ -490,7 +487,7 @@ const ProductInfoPage = () => {
                                                                     <div className="arrow-icon">
                                                                         <i className="fa-regular fa-cart-shopping"></i>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -498,7 +495,7 @@ const ProductInfoPage = () => {
                                                 <div className="swiper-slide">
                                                     <div className="single-shopping-card-one">
                                                         <div className="image-and-action-area-wrapper">
-                                                            <a href="#" className="thumbnail-preview">
+                                                            <Link to="#" className="thumbnail-preview">
                                                                 <div className="badge">
                                                                     <span>25% <br/> 
                                                                         Off
@@ -506,7 +503,7 @@ const ProductInfoPage = () => {
                                                                     <i className="fa-solid fa-bookmark"></i>
                                                                 </div>
                                                                 <img src="assets/images/grocery/02.jpg" alt="grocery"/>
-                                                            </a>
+                                                            </Link>
                                                             <div className="action-share-option">
                                                                 <div className="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                                     <i className="fa-light fa-heart"></i>
@@ -524,9 +521,9 @@ const ProductInfoPage = () => {
                                                                 <i className="fa-light fa-clock"></i>
                                                                 9 MINS
                                                             </div>
-                                                            <a href="#">
+                                                            <Link to="#">
                                                                 <h4 className="title">Peysan Full Fat Fresh Cottage Cheese</h4>
-                                                            </a>
+                                                            </Link>
                                                             <span className="availability">500g Pack</span>
                                                             <div className="price-area">
                                                                 <span className="current">$36.00</span>
@@ -540,7 +537,7 @@ const ProductInfoPage = () => {
                                                                         <button className="button plus">+<i className="fa-regular fa-chevron-up"></i></button>
                                                                     </div>
                                                                 </div>
-                                                                <a href="#" className="rts-btn btn-primary radious-sm with-icon">
+                                                                <Link to="#" className="rts-btn btn-primary radious-sm with-icon">
                                                                     <div className="btn-text">
                                                                         Add To Cart
                                                                     </div>
@@ -550,7 +547,7 @@ const ProductInfoPage = () => {
                                                                     <div className="arrow-icon">
                                                                         <i className="fa-regular fa-cart-shopping"></i>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -558,7 +555,7 @@ const ProductInfoPage = () => {
                                                 <div className="swiper-slide">
                                                     <div className="single-shopping-card-one">
                                                         <div className="image-and-action-area-wrapper">
-                                                            <a href="#" className="thumbnail-preview">
+                                                            <Link to="#" className="thumbnail-preview">
                                                                 <div className="badge">
                                                                     <span>25% <br/> 
                                                                         Off
@@ -566,7 +563,7 @@ const ProductInfoPage = () => {
                                                                     <i className="fa-solid fa-bookmark"></i>
                                                                 </div>
                                                                 <img src="assets/images/grocery/03.jpg" alt="grocery"/>
-                                                            </a>
+                                                            </Link>
                                                             <div className="action-share-option">
                                                                 <div className="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                                     <i className="fa-light fa-heart"></i>
@@ -584,9 +581,9 @@ const ProductInfoPage = () => {
                                                                 <i className="fa-light fa-clock"></i>
                                                                 9 MINS
                                                             </div>
-                                                            <a href="#">
+                                                            <Link to="#">
                                                                 <h4 className="title">Aptamil Gold+ ProNutra Biotik Stage 1 Infant Formula...</h4>
-                                                            </a>
+                                                            </Link>
                                                             <span className="availability">500g Pack</span>
                                                             <div className="price-area">
                                                                 <span className="current">$36.00</span>
@@ -600,7 +597,7 @@ const ProductInfoPage = () => {
                                                                         <button className="button plus">+<i className="fa-regular fa-chevron-up"></i></button>
                                                                     </div>
                                                                 </div>
-                                                                <a href="#" className="rts-btn btn-primary radious-sm with-icon">
+                                                                <Link to="#" className="rts-btn btn-primary radious-sm with-icon">
                                                                     <div className="btn-text">
                                                                         Add To Cart
                                                                     </div>
@@ -610,7 +607,7 @@ const ProductInfoPage = () => {
                                                                     <div className="arrow-icon">
                                                                         <i className="fa-regular fa-cart-shopping"></i>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -618,7 +615,7 @@ const ProductInfoPage = () => {
                                                 <div className="swiper-slide">
                                                     <div className="single-shopping-card-one">
                                                         <div className="image-and-action-area-wrapper">
-                                                            <a href="#" className="thumbnail-preview">
+                                                            <Link to="#" className="thumbnail-preview">
                                                                 <div className="badge">
                                                                     <span>25% <br/> 
                                                                         Off
@@ -626,7 +623,7 @@ const ProductInfoPage = () => {
                                                                     <i className="fa-solid fa-bookmark"></i>
                                                                 </div>
                                                                 <img src="assets/images/grocery/04.jpg" alt="grocery"/>
-                                                            </a>
+                                                            </Link>
                                                             <div className="action-share-option">
                                                                 <div className="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                                     <i className="fa-light fa-heart"></i>
@@ -644,9 +641,9 @@ const ProductInfoPage = () => {
                                                                 <i className="fa-light fa-clock"></i>
                                                                 9 MINS
                                                             </div>
-                                                            <a href="#">
+                                                            <Link to="#">
                                                                 <h4 className="title">Abbott Pediasure Chocolate Refill Pack</h4>
-                                                            </a>
+                                                            </Link>
                                                             <span className="availability">500g Pack</span>
                                                             <div className="price-area">
                                                                 <span className="current">$36.00</span>
@@ -660,7 +657,7 @@ const ProductInfoPage = () => {
                                                                         <button className="button plus">+<i className="fa-regular fa-chevron-up"></i></button>
                                                                     </div>
                                                                 </div>
-                                                                <a href="#" className="rts-btn btn-primary radious-sm with-icon">
+                                                                <Link to="#" className="rts-btn btn-primary radious-sm with-icon">
                                                                     <div className="btn-text">
                                                                         Add To Cart
                                                                     </div>
@@ -670,7 +667,7 @@ const ProductInfoPage = () => {
                                                                     <div className="arrow-icon">
                                                                         <i className="fa-regular fa-cart-shopping"></i>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -678,7 +675,7 @@ const ProductInfoPage = () => {
                                                 <div className="swiper-slide">
                                                     <div className="single-shopping-card-one">
                                                         <div className="image-and-action-area-wrapper">
-                                                            <a href="#" className="thumbnail-preview">
+                                                            <Link to="#" className="thumbnail-preview">
                                                                 <div className="badge">
                                                                     <span>25% <br/> 
                                                                         Off
@@ -686,7 +683,7 @@ const ProductInfoPage = () => {
                                                                     <i className="fa-solid fa-bookmark"></i>
                                                                 </div>
                                                                 <img src="assets/images/grocery/05.jpg" alt="grocery"/>
-                                                            </a>
+                                                            </Link>
                                                             <div className="action-share-option">
                                                                 <div className="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                                     <i className="fa-light fa-heart"></i>
@@ -704,9 +701,9 @@ const ProductInfoPage = () => {
                                                                 <i className="fa-light fa-clock"></i>
                                                                 9 MINS
                                                             </div>
-                                                            <a href="#">
+                                                            <Link to="#">
                                                                 <h4 className="title">Pastine Mellin Filid Angelo 100% Di Grano Tenero</h4>
-                                                            </a>
+                                                            </Link>
                                                             <span className="availability">500g Pack</span>
                                                             <div className="price-area">
                                                                 <span className="current">$36.00</span>
@@ -720,7 +717,7 @@ const ProductInfoPage = () => {
                                                                         <button className="button plus">+<i className="fa-regular fa-chevron-up"></i></button>
                                                                     </div>
                                                                 </div>
-                                                                <a href="#" className="rts-btn btn-primary radious-sm with-icon">
+                                                                <Link to="#" className="rts-btn btn-primary radious-sm with-icon">
                                                                     <div className="btn-text">
                                                                         Add To Cart
                                                                     </div>
@@ -730,7 +727,7 @@ const ProductInfoPage = () => {
                                                                     <div className="arrow-icon">
                                                                         <i className="fa-regular fa-cart-shopping"></i>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -738,7 +735,7 @@ const ProductInfoPage = () => {
                                                 <div className="swiper-slide">
                                                     <div className="single-shopping-card-one">
                                                         <div className="image-and-action-area-wrapper">
-                                                            <a href="#" className="thumbnail-preview">
+                                                            <Link to="#" className="thumbnail-preview">
                                                                 <div className="badge">
                                                                     <span>25% <br/> 
                                                                         Off
@@ -746,7 +743,7 @@ const ProductInfoPage = () => {
                                                                     <i className="fa-solid fa-bookmark"></i>
                                                                 </div>
                                                                 <img src="assets/images/grocery/06.jpg" alt="grocery"/>
-                                                            </a>
+                                                            </Link>
                                                             <div className="action-share-option">
                                                                 <div className="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                                     <i className="fa-light fa-heart"></i>
@@ -764,9 +761,9 @@ const ProductInfoPage = () => {
                                                                 <i className="fa-light fa-clock"></i>
                                                                 9 MINS
                                                             </div>
-                                                            <a href="#">
+                                                            <Link to="#">
                                                                 <h4 className="title">Aussie Bubs Goat Milk Infant Formula Stage 1,</h4>
-                                                            </a>
+                                                            </Link>
                                                             <span className="availability">500g Pack</span>
                                                             <div className="price-area">
                                                                 <span className="current">$36.00</span>
@@ -780,7 +777,7 @@ const ProductInfoPage = () => {
                                                                         <button className="button plus">+<i className="fa-regular fa-chevron-up"></i></button>
                                                                     </div>
                                                                 </div>
-                                                                <a href="#" className="rts-btn btn-primary radious-sm with-icon">
+                                                                <Link to="#" className="rts-btn btn-primary radious-sm with-icon">
                                                                     <div className="btn-text">
                                                                         Add To Cart
                                                                     </div>
@@ -790,7 +787,7 @@ const ProductInfoPage = () => {
                                                                     <div className="arrow-icon">
                                                                         <i className="fa-regular fa-cart-shopping"></i>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -798,7 +795,7 @@ const ProductInfoPage = () => {
                                                 <div className="swiper-slide">
                                                     <div className="single-shopping-card-one">
                                                         <div className="image-and-action-area-wrapper">
-                                                            <a href="#" className="thumbnail-preview">
+                                                            <Link to="#" className="thumbnail-preview">
                                                                 <div className="badge">
                                                                     <span>25% <br/> 
                                                                         Off
@@ -806,7 +803,7 @@ const ProductInfoPage = () => {
                                                                     <i className="fa-solid fa-bookmark"></i>
                                                                 </div>
                                                                 <img src="assets/images/grocery/15.jpg" alt="grocery"/>
-                                                            </a>
+                                                            </Link>
                                                             <div className="action-share-option">
                                                                 <div className="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                                     <i className="fa-light fa-heart"></i>
@@ -824,10 +821,10 @@ const ProductInfoPage = () => {
                                                                 <i className="fa-light fa-clock"></i>
                                                                 9 MINS
                                                             </div>
-                                                            <a href="#">
+                                                            <Link to="#">
                                                                 <h4 className="title">Nestle Cerelac Mixed Fruits &
                                                                     Wheat with Milk</h4>
-                                                            </a>
+                                                            </Link>
                                                             <span className="availability">500g Pack</span>
                                                             <div className="price-area">
                                                                 <span className="current">$36.00</span>
@@ -841,7 +838,7 @@ const ProductInfoPage = () => {
                                                                         <button className="button plus">+<i className="fa-regular fa-chevron-up"></i></button>
                                                                     </div>
                                                                 </div>
-                                                                <a href="#" className="rts-btn btn-primary radious-sm with-icon">
+                                                                <Link to="#" className="rts-btn btn-primary radious-sm with-icon">
                                                                     <div className="btn-text">
                                                                         Add To Cart
                                                                     </div>
@@ -851,7 +848,7 @@ const ProductInfoPage = () => {
                                                                     <div className="arrow-icon">
                                                                         <i className="fa-regular fa-cart-shopping"></i>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
