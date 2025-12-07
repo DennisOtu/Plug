@@ -4,9 +4,15 @@ import axios from 'axios'
 import { useParams } from "react-router-dom"
 import Footer from '../components/footer'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const ProductInfoPage = () => {
     const { productID } = useParams()
+    const [toggleTabs, setToggleTabs] = useState(1)
+
+    function updateToggleTabs(tabNum) {
+        setToggleTabs(tabNum)
+    }    
     
     const getOne = () => {
         return axios.get(`http://localhost:8000/api/v1/product/${productID}`)
@@ -64,40 +70,37 @@ const ProductInfoPage = () => {
                                                         <div className="contents">
                                                             <div className="product-status">
                                                                 <span className="product-catagory">{ data.data.root_category }</span>
-                                                                <div className="rating-stars-group">
-                                                                    <div className="rating-star"><i className="fas fa-star"></i></div>
-                                                                    <div className="rating-star"><i className="fas fa-star"></i></div>
-                                                                    <div className="rating-star"><i className="fas fa-star-half-alt"></i></div>
-                                                                    <span>10 Reviews</span>
-                                                                </div>
                                                             </div>
+                                                            <div className="rating-stars-group">
+                                                                <div className="rating-star"><i className="fas fa-star"></i></div>
+                                                                <div className="rating-star"><i className="fas fa-star"></i></div>
+                                                                <div className="rating-star"><i className="fas fa-star-half-alt"></i></div>
+                                                                <span>10 Reviews</span>
+                                                            </div>                                                            
                                                             <h2 className="product-title">{ data.data.name.split(',')[0] }</h2>
-                                                            <p className="mt--20 mb--20">
-                                                                { data.data.description }
-                                                            </p>
+
                                                         <span className="product-price mb--15 d-block" style={{ color: "#DC2626", fontWeight: 600}}>${ data.data.price }</span>
                                                             <div className="product-bottom-action">
                                                                 <div className="cart-edits">
                                                                     <div className="quantity-edit action-item">
                                                                         <button className="button"><i className="fal fa-minus minus"></i></button>
                                                                         <input type="text" className="input" value="01" />
-                                                                        <button className="button plus">+<i className="fal fa-plus plus"></i></button>
+                                                                        <button className="button plus">+<i className="fa fa-plus plus"></i></button>
                                                                     </div>
                                                                 </div>
                                                                 <Link to="#" className="rts-btn btn-primary radious-sm with-icon">
                                                                     <div className="btn-text">
-                                                                        Add To Cart
+                                                                        Add To Cart 
                                                                     </div>
                                                                     <div className="">
-                                                                        <i className="fa-regular fa-cart-shopping"></i>
+                                                                        <i className="fa fa-cart-shopping"></i>
                                                                     </div>
                                                                 </Link>
                                                             </div>
                                                             <div className="product-uniques">
-                                                                <span className="catagorys product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Categories: </span> { data.data.root_category }</span>
                                                                 <span className="tags product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Color: </span> { data.data.color }</span>
                                                                 <span className="tags product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Size: </span> { data.data.size }</span>
-                                                                <span className="tags product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Category: </span> { data.data.category }</span>
+                                                                <span className="tags product-unipue mb--10"><span style={{fontWeight: 400, marginRight: '10px'}}>Type: </span> { data.data.category }</span>
                                                             </div>
                                                             <div className="share-option-shop-details">
                                                                 <div className="single-share-option">
@@ -125,86 +128,97 @@ const ProductInfoPage = () => {
                                             </div>
                                         </div>
                                         <div className="product-discription-tab-shop mt--50">
-                                            <ul className="nav nav-tabs" id="myTab" role="tablist">
-                                                <li className="nav-item" role="presentation">
-                                                    <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Product Details</button>
+                                            <ul className="productDetailTabs">
+                                                <li className="">
+                                                    <button onClick={()=>updateToggleTabs(1)} className={toggleTabs === 1 ? "activeTab" : "inactiveTab"}>Product Details</button>
                                                 </li>
-                                                <li className="nav-item" role="presentation">
-                                                    <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Additional Information</button>
+                                                <li className="" role="">
+                                                    <button onClick={()=>updateToggleTabs(2)} className={toggleTabs === 2 ? "activeTab" : "inactiveTab"}>Additional Information</button>
                                                 </li>
-                                                <li className="nav-item" role="presentation">
-                                                    <button className="nav-link" id="profile-tabt" data-bs-toggle="tab" data-bs-target="#profile-tab-panes" type="button" role="tab" aria-controls="profile-tab-panes" aria-selected="false">Customer Reviews (01)</button>
+                                                <li className="" role="">
+                                                    <button onClick={()=>updateToggleTabs(3)} className={toggleTabs === 3 ? "activeTab" : "inactiveTab"}>Customer Reviews</button>
                                                 </li>
                                             </ul>
-                                            <div className="tab-content" id="myTabContent">
-                                                <div className="tab-pane fade   show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+
+                                            <div className="tab-content">
+                                                <div className={ toggleTabs === 1 ? "showContent" : "hideContent" }>
                                                     <div className="single-tab-content-shop-details">
                                                         <p className="disc">
-                                                            Uninhibited carnally hired played in whimpered dear gorilla koala depending and much yikes off far quetzal goodness and from for grimaced goodness unaccountably and meadowlark near unblushingly crucial scallop tightly neurotic hungrily some and dear furiously this apart.
-                                                        </p>
-                                                        <div className="details-row-2">
-                                                            <div className="left-area">
-                                                                <img src="assets/images/shop/06.jpg" alt="shop"/>
-                                                            </div>
-                                                            <div className="right">
-                                                                <h4 className="title">All Natural Italian-Style Chicken Meatballs</h4>
-                                                                <p className="mb--25">
-                                                                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. ibero sit amet quam egestas semperAenean ultricies mi vitae est Mauris placerat eleifend.
-                                                                </p>
-                                                                <ul className="bottom-ul">
-                                                                    <li>Elementum sociis rhoncus aptent auctor urna justo</li>
-                                                                    <li>Habitasse venenatis gravida nisl, sollicitudin posuere</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                                                    <div className="single-tab-content-shop-details">
-                                                        <p className="disc">
-                                                            Uninhibited carnally hired played in whimpered dear gorilla koala depending and much yikes off far quetzal goodness and from for grimaced goodness unaccountably and meadowlark near unblushingly crucial scallop tightly neurotic hungrily some and dear furiously this apart.
+                                                            Etiam vel turpis dui. Maecenas tincidunt iaculis urna, vitae commodo nulla 
+                                                            viverra quis. Etiam vehicula purus ac leo malesuada, quis dictum enim efficitur. 
+                                                            Sed lacinia laoreet hendrerit. Nulla facilisi. Praesent ornare urna nec nibh commodo, 
+                                                            vel pulvinar nisi pretium. Maecenas at imperdiet est. Duis interdum scelerisque nisi, 
+                                                            eu suscipit diam tempor et. Phasellus at molestie.
                                                         </p>
                                                         <div className="table-responsive table-shop-details-pd">
                                                             <table className="table">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th>Kitchen Fade Defy</th>
-                                                                        <th>5KG</th>
+                                                                        <th>{ data.data.category }</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td>PRAN Full Cream Milk Powder</td>
-                                                                        <td>3KG</td>
+                                                                        <td>Size</td>
+                                                                        <td>{ data.data.size }</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td>Net weight</td>
-                                                                        <td>8KG</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Brand</td>
-                                                                        <td>Reactheme</td>
+                                                                        <td>Color</td>
+                                                                        <td>{ data.data.color }</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Item code</td>
-                                                                        <td>4000000005</td>
+                                                                        <td>{ productID }</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Product type</td>
-                                                                        <td>Powder milk</td>
+                                                                        <td>{ data.data.root_category }</td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
                                                         </div>
-                                                        <p className="cansellation mt--20">
-                                                            <span> Return/cancellation:</span> No change will be applicable which are already delivered to customer. If product quality or quantity problem found then customer can return/cancel their order on delivery time with presence of delivery person.
-                                                        </p>
                                                         <p className="note">
-                                                            <span>Note:</span> Product delivery duration may vary due to product availability in stock.
+                                                            <span>Note:</span> Product delivery duration may vary depending on product availability in stock.
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div className="tab-pane fade" id="profile-tab-panes" role="tabpanel" aria-labelledby="profile-tabt" tabindex="0">
+                                                <div className={ toggleTabs === 2 ? "showContent" : "hideContent" }>
+                                                    <div className="single-tab-content-shop-details">
+
+                                                        <div className="details-row-2">
+
+                                                            <div className="right">
+                                                                <h4 className="title">
+                                                                    { data.data.name.split(',')[0] }
+                                                                </h4>
+                                                                <p>
+                                                                    { data.data.name.split(',')[1] }
+                                                                </p>
+                                                                <p>
+                                                                    { data.data.name.split(',')[2] }
+                                                                </p>
+                                                                <p>
+                                                                    { data.data.name.split(',')[3] }
+                                                                </p>                                                                                                                                
+                                                                <p className="mb--25">
+                                                                    { data.data.description.split(".")[0].split("✓")[0] }                                                        
+                                                                </p>
+                                                                <p>
+                                                                    { data.data.description.split(".")[0].split("✓")[1] }
+                                                                </p>
+                                                                <p>
+                                                                    { data.data.description.split(".")[1] }
+                                                                </p>
+                                                                <p>
+                                                                    { data.data.description.split(".")[2] }
+                                                                </p>
+                                                                                                                                                                                                
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>                                                    
+                                                </div>
+                                                <div className={ toggleTabs === 3 ? "showContent" : "hideContent" }>
                                                     <div className="single-tab-content-shop-details">
                                                         <div className="product-details-review-product-style">
                                                             <div className="average-stars-area-left">
@@ -220,7 +234,7 @@ const ProductInfoPage = () => {
                                                                             <i className="fa-solid fa-star"></i>
                                                                             <i className="fa-solid fa-star"></i>
                                                                             <i className="fa-solid fa-star"></i>
-                                                                            <span>(1 Reviews & 0 Ratings)</span>
+                                                                            <span>(10 Reviews)</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -338,6 +352,8 @@ const ProductInfoPage = () => {
                                             </div>
                                         </div>
                                     </div>
+{
+/*
                                     <div className="col-xl-3 col-lg-4 col-md-12 offset-xl-1  rts-sticky-column-item">
                                         <div className="theiaStickySidebar">
                                             <div className="shop-sight-sticky-sidevbar  mb--20">
@@ -374,11 +390,15 @@ const ProductInfoPage = () => {
                                             </div>
                                         </div>
                                     </div>
+*/
+}                                
                                 </div>
                             </div>
                         </div>
                     </div>
 
+{
+/*
                     <div className="rts-grocery-feature-area rts-section-gap bg_light-1">
                         <div className="container">
                             <div className="row">
@@ -860,10 +880,12 @@ const ProductInfoPage = () => {
                             </div>
                         </div>
                     </div>
+*/                    
+}
 
                     <div className="rts-shorts-service-area rts-section-gap bg_primary">
-                        <div className="container">
-                            <div className="row g-5">
+                        <div className="">
+                            <div className="horizontalBanner">
                                 <div className="col-lg-3 col-md-6 col-sm-12 col-12">
                                     <div className="single-short-service-area-start">
                                         <div className="icon-area">
@@ -946,6 +968,7 @@ const ProductInfoPage = () => {
                     </div>
                 </>
             }
+
          	<Footer />
         </div>
     )
