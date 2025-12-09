@@ -76,8 +76,14 @@ const ProductInfoPage = () => {
                                                                 <div className="rating-star"><i className="fas fa-star"></i></div>
                                                                 <div className="rating-star"><i className="fas fa-star-half-alt"></i></div>
                                                                 <span>10 Reviews</span>
-                                                            </div>                                                            
+                                                            </div> 
+
                                                             <h2 className="product-title">{ data.data.name.split(',')[0] }</h2>
+
+                                                            <p>
+                                                                Nunc consequat efficitur tellus, sit amet euismod mi semper vitae. 
+                                                                Suspendisse quis massa vel neque pellentesque facilisis. Ut non lobortis nibh. Maecenas libero enim.
+                                                            </p>
 
                                                         <span className="product-price mb--15 d-block" style={{ color: "#DC2626", fontWeight: 600}}>${ data.data.price }</span>
                                                             <div className="product-bottom-action">
@@ -184,13 +190,12 @@ const ProductInfoPage = () => {
                                                 </div>
                                                 <div className={ toggleTabs === 2 ? "showContent" : "hideContent" }>
                                                     <div className="single-tab-content-shop-details">
-
                                                         <div className="details-row-2">
-
                                                             <div className="right">
                                                                 <h4 className="title">
                                                                     { data.data.name.split(',')[0] }
                                                                 </h4>
+
                                                                 <p>
                                                                     { data.data.name.split(',')[1] }
                                                                 </p>
@@ -211,10 +216,8 @@ const ProductInfoPage = () => {
                                                                 </p>
                                                                 <p>
                                                                     { data.data.description.split(".")[2] }
-                                                                </p>
-                                                                                                                                                                                                
-                                                            </div>
-                                                            
+                                                                </p>                                                                                                                                                                                                
+                                                            </div>                                                                                                                    
                                                         </div>
                                                     </div>                                                    
                                                 </div>
