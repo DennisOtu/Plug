@@ -57,7 +57,7 @@ function TrendingProducts() {
                                 <h2 className="productCardInfo" style={{
                                     paddingInline: '20px', fontFamily: 'var(--fontHead)', 
                                     fontSize: '14px', fontWeight: 'bold', textAlign: 'left', 
-                                    height: '35px', overflow: 'hidden'}}>{ product.name }
+                                    height: '35px', overflow: 'hidden'}}>{ product.name.split(',')[0] }
                                 </h2>
                             </div>
                         </Link>
