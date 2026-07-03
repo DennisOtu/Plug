@@ -80,4 +80,3 @@ def guestOrder(request, data):
             quantity=item['quantity']
         )
     return customer, order
-    
