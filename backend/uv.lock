@@ -20,6 +20,7 @@ dependencies = [
     { name = "django" },
     { name = "django-cors-headers" },
     { name = "djangorestframework" },
+    { name = "python-decouple" },
     { name = "pytz" },
     { name = "sqlparse" },
     { name = "tzdata" },
@@ -31,6 +32,7 @@ requires-dist = [
     { name = "django", specifier = "==4.1" },
     { name = "django-cors-headers", specifier = "==3.13.0" },
     { name = "djangorestframework", specifier = "==3.13.1" },
+    { name = "python-decouple", specifier = ">=3.8" },
     { name = "pytz", specifier = "==2022.2.1" },
     { name = "sqlparse", specifier = "==0.4.2" },
     { name = "tzdata", specifier = "==2022.2" },
@@ -73,6 +75,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/7e/40/efa7f7b2448194b1065572f34d3e6cadb478c67af62f6893957376d8a9be/djangorestframework-3.13.1.tar.gz", hash = "sha256:0c33407ce23acc68eca2a6e46424b008c9c02eceb8cf18581921d0092bc1f2ee", size = 954950, upload-time = "2021-12-15T15:18:44.593Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c8/45/2588c7c5a01a7da6822c6ffbc9a731d498c318a803a29ae780ec635ea41d/djangorestframework-3.13.1-py3-none-any.whl", hash = "sha256:24c4bf58ed7e85d1fe4ba250ab2da926d263cd57d64b03e8dcef0ac683f8b1aa", size = 958323, upload-time = "2021-12-15T15:18:42.237Z" },
+]
+
+[[package]]
+name = "python-decouple"
+version = "3.8"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e1/97/373dcd5844ec0ea5893e13c39a2c67e7537987ad8de3842fe078db4582fa/python-decouple-3.8.tar.gz", hash = "sha256:ba6e2657d4f376ecc46f77a3a615e058d93ba5e465c01bbe57289bfb7cce680f", size = 9612, upload-time = "2023-03-01T19:38:38.143Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a2/d4/9193206c4563ec771faf2ccf54815ca7918529fe81f6adb22ee6d0e06622/python_decouple-3.8-py3-none-any.whl", hash = "sha256:d0d45340815b25f4de59c974b855bb38d03151d81b037d9e3f463b0c9f8cbd66", size = 9947, upload-time = "2023-03-01T19:38:36.015Z" },
 ]
 
 [[package]]
